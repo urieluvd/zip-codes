@@ -58,6 +58,10 @@ class Settlement extends Model
         return Str::upper(Str::slug($this->attributes['name'], " "));
     }
 
+    public function getZoneTypeAttribute(){
+        return Str::upper(Str::slug($this->attributes['zone_type'], " "));
+    }
+
     public function city()
     {
         return $this->belongsTo(City::class);
