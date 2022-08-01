@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "https://localhost:8080/api",
+            "url": "https://cryptic-atoll-54006.herokuapp.com/api",
             "description": "API server"
         }
     ],

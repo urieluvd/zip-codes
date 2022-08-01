@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
  *     @OA\Contact(name="Ulises Uriel Verduzco Díaz", email="urieluvd@gmail.com")
  * )
  * @OA\Server(
- *     url="https://localhost:8080/api",
+ *     url=L5_SWAGGER_CONST_HOST,
  *     description="API server"
  * )
  */
