@@ -40,7 +40,8 @@ class Municipality extends Model
     protected $appends = ['key'];
 
     public function getKeyAttribute(){
-        return $this->attributes['id'];
+
+        return intval($this->attributes['code']);
     }
 
     public function cities()
