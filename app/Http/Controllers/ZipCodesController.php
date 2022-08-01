@@ -30,7 +30,9 @@ class ZipCodesController extends Controller
      */
     public function index()
     {
-        //
+
+        $zipCodes = ZipCode::paginate(10);
+        return response()->json($zipCodes);
     }
 
     /**
