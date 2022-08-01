@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 
  /**
  * @OA\Schema(
@@ -35,6 +35,10 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    public function getNameAttribute(){
+        return Str::upper(Str::slug($this->attributes['name'], " "));
+    }
 
     public function settlements()
     {

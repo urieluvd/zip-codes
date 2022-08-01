@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 
  /**
  * @OA\Schema(
@@ -37,6 +37,10 @@ class FederalEntity extends Model
 
     public function getKeyAttribute(){
         return $this->attributes['id'];
+    }
+
+    public function getNameAttribute(){
+        return Str::upper(Str::slug($this->attributes['name'], " "));
     }
 
     public function municipalities()

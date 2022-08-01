@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-
+use Illuminate\Support\Str;
 
  /**
  * @OA\Schema(
@@ -28,6 +27,10 @@ class SettlementType extends Model
     use HasFactory;
 
     protected $visible = ['name'];
+
+    public function getNameAttribute(){
+        return Str::upper(Str::slug($this->attributes['name'], " "));
+    }
 
     public function settlements()
     {
