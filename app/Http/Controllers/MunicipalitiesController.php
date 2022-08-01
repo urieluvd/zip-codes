@@ -12,20 +12,16 @@ class MunicipalitiesController extends Controller
      * @OA\Get(
      *     path="/municipalities/",
      *     summary="Get paginated Municipalities",
+     *     tags={"Municipalities"},
      *     @OA\Parameter(
      *         description="Page number",
      *         in="query",
      *         name="page",
-     *         required=false,
-     *         type="integer"
+     *         required=false
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="OK",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/Municipality")
-     *         )
+     *         description="OK"
      *     )
      * )
      *
@@ -48,7 +44,7 @@ class MunicipalitiesController extends Controller
      */
     public function store(StoreMunicipalityRequest $request)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
 
@@ -58,20 +54,17 @@ class MunicipalitiesController extends Controller
      * @OA\Get(
      *     path="/municipalities/{id}",
      *     summary="Get Municipality by Id",
+     *     tags={"Municipalities"},
      *     @OA\Parameter(
      *         description="Id if the Municipality",
      *         in="path",
      *         name="id",
-     *         required=true,
-     *         type="integer"
+     *         required=true
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Item(ref="#/components/schemas/Municipality")
-     *         )
+     *         @OA\JsonContent(ref="#/components/schemas/Municipality")
      *     )
      * )
      *
@@ -97,7 +90,7 @@ class MunicipalitiesController extends Controller
      */
     public function update(UpdateMunicipalityRequest $request, Municipality $municipality)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
@@ -108,6 +101,6 @@ class MunicipalitiesController extends Controller
      */
     public function destroy(Municipality $municipality)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 }

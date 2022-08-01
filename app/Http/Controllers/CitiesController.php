@@ -11,14 +11,14 @@ class CitiesController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/cities/",
+     *     path="/cities",
      *     summary="Get paginated Cities",
+     *     tags={"Cities"},
      *     @OA\Parameter(
      *         description="Page Number",
      *         in="query",
      *         name="page",
-     *         required=false,
-     *         type="integer"
+     *         required=false
      *     ),
      *     @OA\Response(
      *         response=200,
@@ -36,7 +36,9 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        //
+
+        $cities = City::paginate(10);
+        return response()->json($cities);
     }
 
     /**
@@ -47,27 +49,24 @@ class CitiesController extends Controller
      */
     public function store(StoreCityRequest $request)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
      * @OA\Get(
      *     path="/cities/{id}",
      *     summary="Get City by Id",
+     *     tags={"Cities"},
      *     @OA\Parameter(
      *         description="Id of the City",
      *         in="path",
      *         name="id",
-     *         required=true,
-     *         type="integer"
+     *         required=true
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Item(ref="#/components/schemas/City")
-     *         )
+     *         @OA\JsonContent(ref="#/components/schemas/City")
      *     )
      * )
      *
@@ -91,7 +90,7 @@ class CitiesController extends Controller
      */
     public function update(UpdateCityRequest $request, City $city)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
@@ -102,6 +101,6 @@ class CitiesController extends Controller
      */
     public function destroy(City $city)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 }

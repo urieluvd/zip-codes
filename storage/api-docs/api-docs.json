@@ -1,0 +1,419 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Zip Codes Challenge",
+        "description": "Challenge for Job Interview",
+        "contact": {
+            "name": "Ulises Uriel Verduzco Díaz",
+            "email": "urieluvd@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://localhost:8080/api",
+            "description": "API server"
+        }
+    ],
+    "paths": {
+        "/cities": {
+            "get": {
+                "tags": [
+                    "Cities"
+                ],
+                "summary": "Get paginated Cities",
+                "operationId": "98f2069f279ecc63355cef55e3b41c56",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page Number",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/City"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cities/{id}": {
+            "get": {
+                "tags": [
+                    "Cities"
+                ],
+                "summary": "Get City by Id",
+                "operationId": "534f2f36dc4917626169d6cbe5448901",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the City",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/City"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/federalEntities/": {
+            "get": {
+                "tags": [
+                    "Federal Entities"
+                ],
+                "summary": "Get paginated Fedearl Entities",
+                "operationId": "a1efa9f893525d26555586750d468c94",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page Number",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FederalEntity"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/federalEntities/{id}": {
+            "get": {
+                "tags": [
+                    "Federal Entities"
+                ],
+                "summary": "Get Federal Entity by Id",
+                "operationId": "53ecdb13938b3e0bfcf4706302ef3546",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the Federal Entity",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FederalEntity"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/municipalities/": {
+            "get": {
+                "tags": [
+                    "Municipalities"
+                ],
+                "summary": "Get paginated Municipalities",
+                "operationId": "dc402d35e12e1be911ab3be23d0a2e7d",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/municipalities/{id}": {
+            "get": {
+                "tags": [
+                    "Municipalities"
+                ],
+                "summary": "Get Municipality by Id",
+                "operationId": "1a635c6a8defcdc2c977566fd8b06585",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id if the Municipality",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Municipality"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/settlements/": {
+            "get": {
+                "tags": [
+                    "Settlements"
+                ],
+                "summary": "Get paginated Settlements",
+                "operationId": "91c14752bef76e6dbc2b55a3a14e2bfa",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/settlements/{id}": {
+            "get": {
+                "tags": [
+                    "Settlements"
+                ],
+                "summary": "Get Settlement by Id",
+                "operationId": "8dad7d9d863398969fffb4c30cd19cfc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the Settlement",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Settlement"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/zip-codes": {
+            "get": {
+                "tags": [
+                    "ZipCodes"
+                ],
+                "summary": "Get paginated Zip Codes",
+                "operationId": "33af652c86a92390b548c1b1eab6a066",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page Number",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/zip-codes/{code}": {
+            "get": {
+                "tags": [
+                    "ZipCodes"
+                ],
+                "summary": "Get ZipCode by Code",
+                "operationId": "8b3e6b77fb98192789c322408e6ef6ec",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Code of the ZipCode",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ZipCode"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "City": {
+                "title": "City",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Not a real City"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "00"
+                    },
+                    "municipality_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "FederalEntity": {
+                "title": "Federeal Entity",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Not a real Federal Entity"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "00"
+                    }
+                },
+                "type": "object"
+            },
+            "Municipality": {
+                "title": "Municipality",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Not a real Municiaplity"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "00"
+                    },
+                    "federal_entity_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "Settlement": {
+                "title": "Settlement",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Not a real Settlement"
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "00"
+                    },
+                    "zone_type": {
+                        "type": "string",
+                        "example": "Type"
+                    },
+                    "settlement_type_id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "municipality_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "SettlementType": {
+                "title": "Settlement Type",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Not a real Type"
+                    }
+                },
+                "type": "object"
+            },
+            "ZipCode": {
+                "title": "ZipCode",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "code": {
+                        "type": "string",
+                        "example": "00000"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

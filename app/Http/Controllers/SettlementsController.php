@@ -12,20 +12,16 @@ class SettlementsController extends Controller
      * @OA\Get(
      *     path="/settlements/",
      *     summary="Get paginated Settlements",
+     *     tags={"Settlements"},
      *     @OA\Parameter(
      *         description="Page number",
      *         in="query",
      *         name="page",
-     *         required=false,
-     *         type="integer"
+     *         required=false
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="OK",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/Settlement")
-     *         )
+     *         description="OK"
      *     )
      * )
      *
@@ -46,7 +42,7 @@ class SettlementsController extends Controller
      */
     public function store(StoreSettlementRequest $request)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
 
@@ -55,20 +51,17 @@ class SettlementsController extends Controller
      * @OA\Get(
      *     path="/settlements/{id}",
      *     summary="Get Settlement by Id",
+     *     tags={"Settlements"},
      *     @OA\Parameter(
      *         description="Id of the Settlement",
      *         in="path",
      *         name="id",
-     *         required=true,
-     *         type="integer"
+     *         required=true
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Item(ref="#/components/schemas/Settlement")
-     *         )
+     *         @OA\JsonContent(ref="#/components/schemas/Settlement")
      *     )
      * )
      *
@@ -93,7 +86,7 @@ class SettlementsController extends Controller
      */
     public function update(UpdateSettlementRequest $request, Settlement $settlement)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
@@ -104,6 +97,6 @@ class SettlementsController extends Controller
      */
     public function destroy(Settlement $settlement)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 }

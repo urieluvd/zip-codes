@@ -12,17 +12,20 @@ use Illuminate\Database\Eloquent\Builder;
  *  title="ZipCode",
  * 	@OA\Property(
  * 		property="id",
- * 		type="integer"
+ * 		type="integer",
+ *      example=1
  * 	),
  * 	@OA\Property(
  * 		property="code",
- * 		type="string"
+ * 		type="string",
+ *      example="00000"
  * 	)
  * )
  */
 class ZipCode extends Model
 {
     use HasFactory;
+
 
 
     protected $appends = ['zip_code','locality','federal_entity', 'municipality'];

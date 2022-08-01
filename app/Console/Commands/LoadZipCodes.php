@@ -54,7 +54,7 @@ class LoadZipCodes extends Command
         $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(__DIR__."/../../../storage/CPdescarga.xls");
 
         $sheetCount = $spreadsheet->getSheetCount();
-        for ($i = 3; $i < $sheetCount; $i++) {
+        for ($i = 20; $i < $sheetCount; $i++) {
             $sheet = $spreadsheet->getSheet($i);
             var_dump($sheet->getTitle());
 

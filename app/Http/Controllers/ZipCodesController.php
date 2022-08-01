@@ -12,20 +12,16 @@ class ZipCodesController extends Controller
      * @OA\Get(
      *     path="/zip-codes",
      *     summary="Get paginated Zip Codes",
+     *     tags={"ZipCodes"},
      *     @OA\Parameter(
      *         description="Page Number",
      *         in="query",
      *         name="page",
-     *         required=false,
-     *         type="integer"
+     *         required=false
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="OK",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/ZipCode")
-     *         )
+     *         description="OK"
      *     )
      * )
      * Display a listing of the resource.
@@ -45,28 +41,25 @@ class ZipCodesController extends Controller
      */
     public function store(StoreZipCodeRequest $request)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
 
     /**
      * @OA\Get(
-     *     path="/zip-codes/{id}",
+     *     path="/zip-codes/{code}",
      *     summary="Get ZipCode by Code",
+     *     tags={"ZipCodes"},
      *     @OA\Parameter(
      *         description="Code of the ZipCode",
      *         in="path",
      *         name="id",
-     *         required=true,
-     *         type="string"
+     *         required=true
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Item(ref="#/components/schemas/ZipCode")
-     *         )
+     *         @OA\JsonContent(ref="#/components/schemas/ZipCode")
      *     )
      * )
      *
@@ -89,7 +82,7 @@ class ZipCodesController extends Controller
      */
     public function update(UpdateZipCodeRequest $request, ZipCode $code)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
@@ -100,6 +93,6 @@ class ZipCodesController extends Controller
      */
     public function destroy(ZipCode $code)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 }

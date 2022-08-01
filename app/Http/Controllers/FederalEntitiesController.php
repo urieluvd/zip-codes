@@ -12,12 +12,12 @@ class FederalEntitiesController extends Controller
      * @OA\Get(
      *     path="/federalEntities/",
      *     summary="Get paginated Fedearl Entities",
+     *     tags={"Federal Entities"},
      *     @OA\Parameter(
      *         description="Page Number",
      *         in="query",
      *         name="page",
-     *         required=false,
-     *         type="integer"
+     *         required=false
      *     ),
      *     @OA\Response(
      *         response=200,
@@ -47,7 +47,7 @@ class FederalEntitiesController extends Controller
      */
     public function store(StoreFederalEntityRequest $request)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
 
@@ -55,20 +55,17 @@ class FederalEntitiesController extends Controller
      * @OA\Get(
      *     path="/federalEntities/{id}",
      *     summary="Get Federal Entity by Id",
+     *     tags={"Federal Entities"},
      *     @OA\Parameter(
      *         description="Id of the Federal Entity",
      *         in="path",
      *         name="id",
-     *         required=true,
-     *         type="integer"
+     *         required=true
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Item(ref="#/components/schemas/FederalEntity")
-     *         )
+     *         @OA\JsonContent(ref="#/components/schemas/FederalEntity")
      *     )
      * )
      *
@@ -93,7 +90,7 @@ class FederalEntitiesController extends Controller
      */
     public function update(UpdateFederalEntityRequest $request, FederalEntity $federalEntity)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 
     /**
@@ -104,6 +101,6 @@ class FederalEntitiesController extends Controller
      */
     public function destroy(FederalEntity $federalEntity)
     {
-        //
+        return response()->json(['error' => 'Unauthorized.'], 401);
     }
 }

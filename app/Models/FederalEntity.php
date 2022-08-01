@@ -12,15 +12,18 @@ use Illuminate\Database\Eloquent\Model;
  *  title="Federeal Entity",
  *  @OA\Property(
  * 		property="id",
- * 		type="integer"
+ * 		type="integer",
+ *      example=1
  * 	),
  * 	@OA\Property(
  * 		property="name",
- * 		type="string"
+ * 		type="string",
+ *      example="Not a real Federal Entity"
  * 	),
  * 	@OA\Property(
  * 		property="code",
- * 		type="string"
+ * 		type="string",
+ *      example="00"
  * 	)
  * )
  */

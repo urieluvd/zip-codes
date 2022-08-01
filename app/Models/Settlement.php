@@ -12,27 +12,33 @@ use Illuminate\Database\Eloquent\Model;
  *  title="Settlement",
  *  @OA\Property(
  * 		property="id",
- * 		type="integer"
+ * 		type="integer",
+ *      example=1
  * 	),
  * 	@OA\Property(
  * 		property="name",
- * 		type="string"
+ * 		type="string",
+ *      example="Not a real Settlement"
  * 	),
  * 	@OA\Property(
  * 		property="code",
- * 		type="string"
+ * 		type="string",
+ *      example="00"
  * 	),
  * 	@OA\Property(
  * 		property="zone_type",
- * 		type="string"
+ * 		type="string",
+ *      example="Type"
  * 	),
  * 	@OA\Property(
  * 		property="settlement_type_id",
- * 		type="string"
+ * 		type="integer",
+ *      example=1
  * 	),
  * 	@OA\Property(
  * 		property="municipality_id",
- * 		type="string"
+ * 		type="integer",
+ *      example=1
  * 	)
  * )
  */

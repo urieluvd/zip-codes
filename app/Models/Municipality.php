@@ -12,19 +12,23 @@ use Illuminate\Database\Eloquent\Model;
  *  title="Municipality",
  *  @OA\Property(
  * 		property="id",
- * 		type="integer"
+ * 		type="integer",
+ *      example=1
  * 	),
  * 	@OA\Property(
  * 		property="name",
- * 		type="string"
+ * 		type="string",
+ *      example="Not a real Municiaplity"
  * 	),
  * 	@OA\Property(
  * 		property="code",
- * 		type="string"
+ * 		type="string",
+ *      example="00"
  * 	),
  * 	@OA\Property(
  * 		property="federal_entity_id",
- * 		type="string"
+ * 		type="integer",
+ *      example=1
  * 	)
  * )
  */
