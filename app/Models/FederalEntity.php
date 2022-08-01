@@ -43,6 +43,10 @@ class FederalEntity extends Model
         return Str::upper(Str::slug($this->attributes['name'], " "));
     }
 
+    public function getCodeAttribute(){
+        return null;
+    }
+
     public function municipalities()
     {
         return $this->hasMany(Municipality::class);
