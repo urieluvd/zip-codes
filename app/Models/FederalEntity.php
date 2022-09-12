@@ -33,7 +33,7 @@ class FederalEntity extends Model
 
     protected $appends = ['key'];
 
-    protected $visible = ['key', 'name', 'code'];
+    protected $visible = ['name', 'code', 'key'];
 
     public function getKeyAttribute(){
         return $this->attributes['id'];

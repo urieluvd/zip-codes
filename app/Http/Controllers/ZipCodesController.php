@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ZipCode;
 use App\Http\Requests\StoreZipCodeRequest;
 use App\Http\Requests\UpdateZipCodeRequest;
+use App\Http\Resources\ZipCodeResource;
 
 class ZipCodesController extends Controller
 {
@@ -71,7 +72,8 @@ class ZipCodesController extends Controller
     public function show($code)
     {
         $zipcode = ZipCode::where('code', $code)->with(['settlements.settlementType:id,name'])->first();
-        return response()->json($zipcode);
+        $resource = new ZipCodeResource($zipcode);
+        return response()->json($resource);
 
     }
 
